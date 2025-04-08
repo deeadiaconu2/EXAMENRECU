@@ -1,10 +1,10 @@
 package Clase;
 
 public class Circulo {
+	
 	//Atributos
 	
 		private int id;
-		private String nombre;
 		private double radio;
 		private String color;
 		
@@ -16,10 +16,9 @@ public class Circulo {
 		
 	//Constructor 
 		
-		public Circulo(int id, String nombre, double radio, String color) {
+		public Circulo(int id, double radio, String color) {
 			super();
 			this.id = id;
-			this.nombre = nombre;
 			this.radio = radio;
 			this.color = color;
 		}
@@ -32,14 +31,6 @@ public class Circulo {
 
 		public void setId(int id) {
 			this.id = id;
-		}
-
-		public String getNombre() {
-			return nombre;
-		}
-
-		public void setNombre(String nombre) {
-			this.nombre = nombre;
 		}
 
 		public double getRadio() {
@@ -62,8 +53,15 @@ public class Circulo {
 		
 		@Override
 		public String toString() {
-			return "Circulo [id=" + id + ", nombre=" + nombre + ", color=" + color + "]";
+			return "Circulo [id=" + id + ",  color=" + color + "]";
 		}
 		
 
+		public static double CalcularAreaCirculo(Circulo circulo1) {
+			//Calcular area Circulo: pi * r * r
+			double radio = circulo1.getRadio();
+			double pi = 3.14;
+			double areacirculo = radio * radio * pi;
+			return areacirculo;
+			}
 }

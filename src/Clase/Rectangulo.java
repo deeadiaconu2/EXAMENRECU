@@ -5,7 +5,6 @@ public class Rectangulo {
 	//Atributos
 	
 	private int id;
-	private String nombre;
 	private double ladoA;
 	private double ladoB;
 	private String color;
@@ -18,10 +17,9 @@ public class Rectangulo {
 	
 	//Constructor
 
-	public Rectangulo(int id, String nombre, double ladoA, double ladoB, String color) {
+	public Rectangulo(int id, double ladoA, double ladoB, String color) {
 		super();
 		this.id = id;
-		this.nombre = nombre;
 		this.ladoA = ladoA;
 		this.ladoB = ladoB;
 		this.color = color;
@@ -35,14 +33,6 @@ public class Rectangulo {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public double getLadoA() {
@@ -73,8 +63,15 @@ public class Rectangulo {
 	
 	@Override
 	public String toString() {
-		return "Rectangulo [id=" + id + ", nombre=" + nombre + ", ladoA=" + ladoA + ", ladoB=" + ladoB + ", color="
+		return "Rectangulo [id=" + id + ", ladoA=" + ladoA + ", ladoB=" + ladoB + ", color="
 				+ color + "]";
 	}
 	
+	public static double CalcularAreaRectangulo (Rectangulo rectangulo1) {
+		// Calcular area rectangulo: ladoA*ladoB 
+		double ladoA = rectangulo1.getLadoA();
+		double ladoB = rectangulo1.getLadoB();
+		double areaRectangulo = ladoA + ladoB;
+		return areaRectangulo;
+	}
 }
